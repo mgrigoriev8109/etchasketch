@@ -47,3 +47,7 @@ table {
 	border-spacing: 0;
 }
 
+.gridItem {
+    background-color: grey;
+    border: black solid 2px;
+}
