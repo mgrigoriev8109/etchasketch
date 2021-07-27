@@ -1,6 +1,7 @@
-const gridContainer = document.getElementById("#gridContainer");
+const gridContainer = document.querySelector("#gridContainer");
 
 for (i=0; i<=16; i++){
-    let generatedGridItem =  gridContainer.appendChild(div);
-    generatedGridItem.className += 'gridItem';
+    let generatedGridItem = document.createElement('div');
+    generatedGridItem.classList.add('gridItem');
+    gridContainer.appendChild(generatedGridItem);
 }
