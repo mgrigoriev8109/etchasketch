@@ -47,10 +47,16 @@ table {
 	border-spacing: 0;
 }
 
+#gridContainer{
+	display:grid;
+	grid-template-columns: repeat(16, 1fr);
+
+}
+
 .gridItem {
     background-color: red;
     border: black solid 2px;
-	width: 50px;
-	height: 50px;
+	width: 10px;
+	height: 10px;
 
 }
