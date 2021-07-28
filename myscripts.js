@@ -1,19 +1,22 @@
 const clearButton = document.querySelector('#clearButton');
-let userSquarePerRowInput = 0;
 let widthOfGridItem = 0;
 let totalGridItemsInContainer = 0;
 
+
+//SOLUTION TO MY PROBLEM:
 function calculateQuantityOfGridSquares(){
-    userSquarePerRowInput = prompt("How many squares (less than 100) would you like one side of your grid to have?");
+    let userSquarePerRowInput = prompt("How many squares (less than 100) would you like one side of your grid to have?");
     while (userSquarePerRowInput>=100){
         userSquarePerRowInput = prompt("You accidentally typed in a number over 100, please type in another less than 100!");
         }
-    widthOfGridItem = 10000 / userSquarePerRowInput;
-    totalGridItemsInContainer = userSquarePerRowInput * userSquarePerRowInput; 
+    return userSquarePerRowInput;
 }
 
 calculateQuantityOfGridSquares();
+widthOfGridItem = 10000 / userSquarePerRowInput;
+totalGridItemsInContainer = userSquarePerRowInput * userSquarePerRowInput; 
 
+/*
 function generateGrid(gridContainer) {
     for (i=0; i<totalGridItemsInContainer; i++){
         let gridContainer = document.querySelector("#gridContainer");
@@ -31,7 +34,7 @@ function generateGrid(gridContainer) {
 calculateQuantityOfGridSquares();
 
 generateGrid();
-
+*/
 /*
 
 function clearGrid(){
