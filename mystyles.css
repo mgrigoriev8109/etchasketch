@@ -50,12 +50,11 @@ table {
 #gridContainer{
 	display:grid;
 	grid-template-columns: repeat(16, 10px);
+	width: 
 
 }
 
 .gridItem {
-    background-color: red;
-    border: black solid 2px;
 	width: 10px;
 	height: 10px;
 
