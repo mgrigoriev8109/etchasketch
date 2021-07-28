@@ -1,16 +1,20 @@
-const gridContainer = document.querySelector("#gridContainer");
 const clearButton = document.querySelector('#clearButton');
 
-for (i=0; i<=255; i++){
-    let generatedGridItem = document.createElement('div');
-    generatedGridItem.classList.add('gridItem');
-    gridContainer.appendChild(generatedGridItem);
-    generatedGridItem.addEventListener('mouseover', function(e) {
-        e.target.style.background = 'blue';
-    
-    })
+function generateGrid(gridContainer) {
+    for (i=0; i<=255; i++){
+        let gridContainer = document.querySelector("#gridContainer");
+        let generatedGridItem = document.createElement('div');
+        generatedGridItem.classList.add('gridItem');
+        gridContainer.appendChild(generatedGridItem);
+        generatedGridItem.addEventListener('mouseover', function(e) {
+            e.target.style.background = 'blue';
+         });
+    }
 }
 
+generateGrid();
+
+/*
 clearButton.addEventListener('click', () => {
     // first this button sends a prompt asking how many squares per row
     // if the number is above 100 it sends an alert and starts over
@@ -26,4 +30,4 @@ clearButton.addEventListener('click', () => {
     // final functions, place there at the top of the code seperate from the addEventListener
     // : removeGridItems (for loop), createGridItems (for loop), calculateGridItemSize (math)
 
-})
+})*/
