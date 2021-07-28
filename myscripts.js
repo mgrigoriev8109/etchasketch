@@ -1,7 +1,5 @@
 const clearButton = document.querySelector('#clearButton');
 
-
-//SOLUTION TO MY PROBLEM:
 function getUserInputSquareQuantity(){
     let userSquarePerRowInput = parseInt(prompt("How many squares (less than 100) would you like one side of your grid to have?"));
     while (userSquarePerRowInput>=100){
@@ -10,31 +8,37 @@ function getUserInputSquareQuantity(){
     return userSquarePerRowInput;
 }
 
-
-
-function generateGrid(gridContainer) {
-    userSquarePerRowInput =  getUserInputSquareQuantity();
+function calculateWidthOfGridItem(){
     let widthOfGridItem = 10000 / userSquarePerRowInput;
+    return widthOfGridItem;
+}
+
+function calculateTotalGridItems(){
     let totalGridItemsInContainer = userSquarePerRowInput * userSquarePerRowInput; 
     if (totalGridItemsInContainer % 2 === 1){
         totalGridItemsInContainer = totalGridItemsInContainer - 1;
     }
-    console.log(widthOfGridItem);
-    console.log(totalGridItemsInContainer);
-    console.log(userSquarePerRowInput);
+    return totalGridItemsInContainer;
+}
+
+function generateGrid() {
+    let gridContainer = document.querySelector("#gridContainer");
+    userSquarePerRowInput =  getUserInputSquareQuantity();
+    widthOfGridItem = calculateWidthOfGridItem();
+    totalGridItemsInContainer = calculateTotalGridItems();
+    gridContainer.style.gridTemplateColumns = totalGridItemsInContainer;
+
     for (i=0; i<totalGridItemsInContainer; i++){
-        let gridContainer = document.querySelector("#gridContainer");
         let generatedGridItem = document.createElement('div');
         generatedGridItem.classList.add('gridItem');
+        generatedGridItem.style.height = widthOfGridItem;
+        generatedGridItem.style.width = widthOfGridItem;
         gridContainer.appendChild(generatedGridItem);
         generatedGridItem.addEventListener('mouseover', function(e) {
             e.target.style.background = 'blue';
          });
     }
 }
-
- // 10,000 pixels should be the size of the grid container
-
 generateGrid();
 
 /*

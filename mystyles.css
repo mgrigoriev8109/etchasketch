@@ -49,13 +49,7 @@ table {
 
 #gridContainer{
 	display:grid;
-	grid-template-columns: repeat(16, 10px);
-	width: 
-
-}
-
-.gridItem {
-	width: 10px;
-	height: 10px;
+	width: 100px;
+	height: 100px;
 
 }
