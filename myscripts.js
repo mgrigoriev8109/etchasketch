@@ -9,7 +9,7 @@ function getUserInputSquareQuantity(){
 }
 
 function calculateWidthOfGridItem(){
-    let widthOfGridItem = 10000 / userSquarePerRowInput;
+    let widthOfGridItem = Math.round(10000 / userSquarePerRowInput);
     return widthOfGridItem;
 }
 
@@ -21,13 +21,23 @@ function calculateTotalGridItems(){
     return totalGridItemsInContainer;
 }
 
+function turnUserInputIntoStyleString(userInputGridSquares, userInputWidthOfGridItem){
+    
+    let gridTemplateColumnRowString = 'repeat(' + userInputGridSquares + ', ' + userInputWidthOfGridItem + 'px);';
+    return gridTemplateColumnRowString;
+    // this is a string of what it needs to 
+}
+
+
 function generateGrid() {
     let gridContainer = document.querySelector("#gridContainer");
     userSquarePerRowInput =  getUserInputSquareQuantity();
     widthOfGridItem = calculateWidthOfGridItem();
     totalGridItemsInContainer = calculateTotalGridItems();
-    gridContainer.style.gridTemplateColumns = totalGridItemsInContainer;
-
+    gridTemplateColumnRowString = turnUserInputIntoStyleString(userSquarePerRowInput, widthOfGridItem);
+    gridContainer.style.gridTemplateColumns = 'grid-template-columns: ' + gridTemplateColumnRowString;
+    gridContainer.style.gridTemplateRows = 'grid-template-rows: ' + gridTemplateColumnRowString;
+    
     for (i=0; i<totalGridItemsInContainer; i++){
         let generatedGridItem = document.createElement('div');
         generatedGridItem.classList.add('gridItem');
