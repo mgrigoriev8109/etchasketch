@@ -9,7 +9,7 @@ function getUserInputSquareQuantity(){
 }
 
 function calculateWidthOfGridItem(){
-    let widthOfGridItem = Math.round(10000 / userSquarePerRowInput);
+    let widthOfGridItem = Math.round(100 / userSquarePerRowInput);
     return widthOfGridItem;
 }
 
@@ -35,14 +35,17 @@ function generateGrid() {
     widthOfGridItem = calculateWidthOfGridItem();
     totalGridItemsInContainer = calculateTotalGridItems();
     gridTemplateColumnRowString = turnUserInputIntoStyleString(userSquarePerRowInput, widthOfGridItem);
-    gridContainer.style.gridTemplateColumns = 'grid-template-columns: ' + gridTemplateColumnRowString;
-    gridContainer.style.gridTemplateRows = 'grid-template-rows: ' + gridTemplateColumnRowString;
+    let stringGridTemplateColumns = 'grid-template-columns: ' + gridTemplateColumnRowString;
+    let stringGridTemplateRows = 'grid-template-rows: ' + gridTemplateColumnRowString;
+    gridContainer.style.cssText = stringGridTemplateColumns; 
+    gridContainer.style.cssText = stringGridTemplateRows;
     
     for (i=0; i<totalGridItemsInContainer; i++){
         let generatedGridItem = document.createElement('div');
         generatedGridItem.classList.add('gridItem');
-        generatedGridItem.style.height = widthOfGridItem;
-        generatedGridItem.style.width = widthOfGridItem;
+        let pixelWidthOfGridItem = widthOfGridItem + "px";
+        generatedGridItem.style.height = pixelWidthOfGridItem;
+        generatedGridItem.style.width = pixelWidthOfGridItem;
         gridContainer.appendChild(generatedGridItem);
         generatedGridItem.addEventListener('mouseover', function(e) {
             e.target.style.background = 'blue';
