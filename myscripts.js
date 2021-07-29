@@ -25,7 +25,6 @@ function turnUserInputIntoStyleString(userInputGridSquares, userInputWidthOfGrid
     
     let gridTemplateColumnRowString = 'repeat(' + userInputGridSquares + ', ' + userInputWidthOfGridItem + 'px);';
     return gridTemplateColumnRowString;
-    // this is a string of what it needs to 
 }
 
 
@@ -35,6 +34,7 @@ function generateGrid() {
     widthOfGridItem = calculateWidthOfGridItem();
     totalGridItemsInContainer = calculateTotalGridItems();
     gridTemplateColumnRowString = turnUserInputIntoStyleString(userSquarePerRowInput, widthOfGridItem);
+    // NEXT TRY USING CSS DEV TOOLS OR DEBUGGER TO FIGURE OUT COMPUTED STYLES OF GRIDCONTAINER
     let stringGridTemplateColumns = 'grid-template-columns: ' + gridTemplateColumnRowString;
     let stringGridTemplateRows = 'grid-template-rows: ' + gridTemplateColumnRowString;
     gridContainer.style.cssText = stringGridTemplateColumns; 
