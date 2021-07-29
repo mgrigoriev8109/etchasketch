@@ -48,32 +48,14 @@ function generateGrid() {
          });
     }
 }
-generateGrid();
 
-/*
+generateGrid();
 
 function clearGrid(){
 
 }
 
 clearButton.addEventListener('click', () => {
+
+    generateGrid();
 });
-    First the button can have the functionality of taking in user input, and generating 
-    the correct number of squares within a gridContainer of 10,000 pixels.
-
-    After that functionality works, I will add the clearGrid function
-
-    // first this button sends a prompt asking how many squares per row
-    // if the number is above 100 it sends an alert and starts over
-    // we find size of grid item width and height
-    // then we run another seperately created function for loop to .removeChild 256 time
-    // then we turn the above for loop into a function where 255 is replaced 
-    // by a value we can input
-    // we change the gridContainer style to match the size input, and we
-    // run the for loop again, this time setting the gridItem styles to the
-    // (calculated) input height and width
-
-    // final functions, place there at the top of the code seperate from the addEventListener
-    // : removeGridItems (for loop), createGridItems (for loop), calculateGridItemSize (math)
-
-*/
