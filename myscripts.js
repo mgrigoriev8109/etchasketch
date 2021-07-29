@@ -9,7 +9,7 @@ function getUserInputSquareQuantity(){
 }
 
 function calculateWidthOfGridItem(){
-    let widthOfGridItem = Math.round(100 / userSquarePerRowInput);
+    let widthOfGridItem = Math.round(500 / userSquarePerRowInput);
     return widthOfGridItem;
 }
 
@@ -34,12 +34,8 @@ function generateGrid() {
     widthOfGridItem = calculateWidthOfGridItem();
     totalGridItemsInContainer = calculateTotalGridItems();
     gridTemplateColumnRowString = turnUserInputIntoStyleString(userSquarePerRowInput, widthOfGridItem);
-    // NEXT TRY USING CSS DEV TOOLS OR DEBUGGER TO FIGURE OUT COMPUTED STYLES OF GRIDCONTAINER
-    let stringGridTemplateColumns = 'grid-template-columns: ' + gridTemplateColumnRowString;
-    let stringGridTemplateRows = 'grid-template-rows: ' + gridTemplateColumnRowString;
-    gridContainer.style.cssText = stringGridTemplateColumns; 
-    gridContainer.style.cssText = stringGridTemplateRows;
-    
+    let stringGridColumnsRows = 'grid-template-columns: ' + gridTemplateColumnRowString + 'grid-template-rows: ' + gridTemplateColumnRowString;
+    gridContainer.style.cssText = stringGridColumnsRows; 
     for (i=0; i<totalGridItemsInContainer; i++){
         let generatedGridItem = document.createElement('div');
         generatedGridItem.classList.add('gridItem');
