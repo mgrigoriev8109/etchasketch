@@ -44,7 +44,7 @@ function generateGrid() {
         generatedGridItem.style.width = pixelWidthOfGridItem;
         gridContainer.appendChild(generatedGridItem);
         generatedGridItem.addEventListener('mouseover', function(e) {
-            e.target.style.background = 'blue';
+            e.target.style.background = 'DarkRed';
          });
     }
 }
