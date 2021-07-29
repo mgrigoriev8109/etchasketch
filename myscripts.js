@@ -47,15 +47,14 @@ function generateGrid() {
             e.target.style.background = 'DarkRed';
          });
     }
+    clearButton.addEventListener('click', () => {
+        let allGridItems = document.getElementsByClassName('gridItem');
+        while(allGridItems[0]) {
+            allGridItems.gridContainer.removeChild(allGridItems[0]);
+         }
+        });
 }
 
 generateGrid();
 
-function clearGrid(){
 
-}
-
-clearButton.addEventListener('click', () => {
-
-    generateGrid();
-});
