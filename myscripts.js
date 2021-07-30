@@ -7,15 +7,13 @@ function getUserInputSquareQuantity(){
 }
 
 function calculateWidthOfGridItem(){
-    let widthOfGridItem = Math.round(500 / userSquarePerRowInput);
+    let widthOfGridItem = (500 / userSquarePerRowInput);
     return widthOfGridItem;
 }
 
 function calculateTotalGridItems(){
     let totalGridItemsInContainer = userSquarePerRowInput * userSquarePerRowInput; 
-    if (totalGridItemsInContainer % 2 === 1){
-        totalGridItemsInContainer = totalGridItemsInContainer - 1;
-    }
+    
     return totalGridItemsInContainer;
 }
 
