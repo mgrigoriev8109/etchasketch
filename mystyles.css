@@ -47,9 +47,30 @@ table {
 	border-spacing: 0;
 }
 
+h1{
+	font-size: 35px;
+	margin: 20px;
+	color: rgb(55, 128, 224); 
+	font-family: Georgia;
+}
+
+button{
+	margin: 30px;
+	font-size: 16px;
+	font-family: Georgia;
+	background-color: #bfffc1;
+}
+body{
+	height: 100vh;
+	background-color: rgba(157, 233, 169, 0.89);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
 #gridContainer{
 	display:grid;
 	width: 500px;
 	height: 500px;
-	border: 1px solid rgb(87, 39, 39); 
+	border: 4px solid rgba(235, 245, 232, 0.856); 
 }
