@@ -1,5 +1,3 @@
-const clearButton = document.querySelector('#clearButton');
-
 function getUserInputSquareQuantity(){
     let userSquarePerRowInput = parseInt(prompt("How many squares (less than 100) would you like one side of your grid to have?"));
     while (userSquarePerRowInput>=100){
@@ -21,12 +19,10 @@ function calculateTotalGridItems(){
     return totalGridItemsInContainer;
 }
 
-function turnUserInputIntoStyleString(userInputGridSquares, userInputWidthOfGridItem){
-    
+function turnUserInputIntoStyleString(userInputGridSquares, userInputWidthOfGridItem){  
     let gridTemplateColumnRowString = 'repeat(' + userInputGridSquares + ', ' + userInputWidthOfGridItem + 'px);';
     return gridTemplateColumnRowString;
 }
-
 
 function generateGrid() {
     let gridContainer = document.querySelector("#gridContainer");
@@ -47,14 +43,16 @@ function generateGrid() {
             e.target.style.background = 'DarkRed';
          });
     }
-    clearButton.addEventListener('click', () => {
-        let allGridItems = document.getElementsByClassName('gridItem');
-        while(allGridItems[0]) {
-            allGridItems.gridContainer.removeChild(allGridItems[0]);
-         }
-        });
 }
 
+const clearButton = document.querySelector('#clearButton');
+clearButton.addEventListener('click', () => {   
+    let allGridItems = document.getElementsByClassName('gridItem');
+    console.log(allGridItems);
+    while(allGridItems[0]) {
+        gridContainer.removeChild(allGridItems[0]);
+    };
+    generateGrid();
+    });
+
 generateGrid();
-
-
